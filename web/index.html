@@ -77,9 +77,9 @@ h2 em{font-weight:500;color:var(--rose)}
 .svc p{font-size:14px;color:var(--dim)}
 
 /* work */
-.grid{columns:4 220px;column-gap:12px}
-.grid a{display:block;margin-bottom:12px;break-inside:avoid;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--line)}
-.grid img{width:100%;transition:transform .5s,filter .5s}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid a{display:block;aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s}
 .grid a:hover img{transform:scale(1.04);filter:brightness(1.08)}
 .grid .play{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(20,7,10,.6);display:grid;place-items:center;backdrop-filter:blur(4px)}
 .more{text-align:center;margin-top:36px}
@@ -140,17 +140,16 @@ footer a:hover{color:var(--cream)}
   .services,.steps,.why{grid-template-columns:1fr}
   .svc{min-height:380px}
   section{padding:80px 0}
-  .grid{columns:2;column-gap:8px}
-  .grid a{margin-bottom:8px}
+  .grid{grid-template-columns:1fr 1fr;gap:8px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
 /* desktop hero: video on the right, text on the left */
 @media (min-width:981px){
   .hero{align-items:center;padding:110px 0 70px}
-  .hero .bg{left:auto;right:0;width:64%;overflow:hidden}
+  .hero .bg{left:auto;right:0;width:68%;overflow:hidden}
   .hero .bg video{object-position:center center}
-  .hero .bg::after{background:linear-gradient(90deg,var(--bg) 0%,rgba(20,7,10,.55) 22%,rgba(20,7,10,0) 55%),linear-gradient(0deg,var(--bg) 0%,transparent 25%),linear-gradient(180deg,rgba(20,7,10,.6) 0%,transparent 20%)}
+  .hero .bg::after{background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 2%,rgba(20,7,10,.55) 24%,rgba(20,7,10,0) 55%),linear-gradient(0deg,var(--bg) 0%,transparent 25%),linear-gradient(180deg,rgba(20,7,10,.6) 0%,transparent 20%)}
   .hero .wrap{width:100%}
   .hero .wrap>*{max-width:520px}
   .hero h1{font-size:clamp(56px,5.6vw,86px)}
